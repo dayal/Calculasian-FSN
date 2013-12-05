@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<link rel="stylesheet" type="text/css" href="fontello/css/youtube.css">
+<style>
+body {
+	margin: 0px;
+	background-color: #000;
+	height: 100%;
+	position:fixed;
+	width: 100%;
+}
+
+header {
+	margin: 10px auto;
+	text-align: center;
+}
+
+div {
+	background-color: #000;
+}
+
+#logo {
+	display: inline;
+}
+
+#logo img {
+	display: inline;
+	max-height: 10%;
+}
+
+#logo img#Acappella {
+	max-height: 5%;
+	margin-left: -50px;
+}
+
+#media_icons {
+	display: inline;
+	position: absolute;
+	top: 80px;
+	margin-left: 5%;
+}
+
+#media_icons a {
+	color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline;
+}
+
+#video {
+	position:relative;
+	max-height: 80%;
+}
+#video img.ratio {
+	display: block;
+	width: 100%;
+	height: auto;
+	opacity: 0;
+}
+#video iframe {
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+
+<header>
+	<div id="logo">
+		<img src="Calculasian.png">
+		<img id="Acappella" src="Acappella.png">
+	</div>
+	<div id="media_icons">
+		<a class="icon-facebook" href="#"></a>
+		<a class="icon-renren" href="#"></a>
+		<a class="icon-sina-weibo" href="#"></a>
+		<a class="icon-youku" href="#"></a>
+		<a class="icon-youtube" href="#"></a>
+	</div>
+</header>
+<div id="video">
+	<img class="ratio" src="http://placehold.it/16x9"/>
+	<iframe frameborder="0" height="auto" width="100%"
+	src="https://youtube.com/embed/qI4LdAUT0lQ?autoplay=1&controls=1&showinfo=0&autohide=1">
+	</iframe>
+</div>
