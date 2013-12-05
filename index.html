@@ -1,18 +1,42 @@
 <!DOCTYPE HTML>
 <link rel="stylesheet" type="text/css" href="fontello/css/youtube.css">
 <style>
+
 body {
-	margin: 0px;
+	margin: 0;
+}
+
+.block {
+	height: 100%;
+	position:relative;
+	width: 100%;
+	min-height: 900px;
+}
+
+#front_page {
 	background-size: cover;
 	background-image: url(background.jpg);
 	background-repeat: no-repeat;
-	height: 100%;
-	position:fixed;
-	width: 100%;
+}
+
+#page2 {
+	background-color: #e6e3d1;
+}
+
+#page3 {
+	background-color: #c05949;
+}
+
+#page4 {
+	background-color: #f5e9eb;
+}
+
+#page5 {
+	background-color: #8fbf99;
 }
 
 header {
-	margin: 30px auto;
+	padding: 30px;
 	text-align: center;
 }
 
@@ -52,7 +76,7 @@ div {
 	position:relative;
 	max-height: 80%;
 	max-width: 70%;
-	margin: 0 auto;
+	margin: 0 auto 100px auto;
 }
 #video img.ratio {
 	display: block;
@@ -67,23 +91,54 @@ div {
 	width: 100%;
 	height: 100%;
 }
-</style>
 
-<header>
-	<div id="logo">
-		<img src="Calculasian.png">
-		<img id="Acappella" src="Acappella.png">
+h1 {
+	margin: 0;
+	text-align: center;
+	padding: 20px;
+}
+</style>
+<div class="block" id="front_page">
+	<header>
+		<div id="logo">
+			<img src="Calculasian.png">
+			<img id="Acappella" src="Acappella.png">
+		</div>
+		<div id="media_icons">
+			<a class="icon-facebook" href="http://www.facebook.com/calculasian2013" target="_blank"></a>
+			<a class="icon-sina-weibo" href="http://www.weibo.com/calculasian" target="_blank"></a>
+			<a class="icon-youku" href="http://u.youku.com/Calculasian" target="_blank"></a>
+			<a class="icon-youtube" href="http://www.youtube.com/user/calculasianofficial" target="_blank"></a>
+		</div>
+	</header>
+	<div id="video">
+		<img class="ratio" src="http://placehold.it/16x9"/>
+		<iframe frameborder="0" height="auto" width="100%"
+		src="https://youtube.com/embed/qI4LdAUT0lQ?autoplay=1&controls=1&showinfo=0&autohide=1">
+		</iframe>
 	</div>
-	<div id="media_icons">
-		<a class="icon-facebook" href="http://www.facebook.com/calculasian2013" target="_blank"></a>
-		<a class="icon-sina-weibo" href="http://www.weibo.com/calculasian" target="_blank"></a>
-		<a class="icon-youku" href="http://u.youku.com/Calculasian" target="_blank"></a>
-		<a class="icon-youtube" href="http://www.youtube.com/user/calculasianofficial" target="_blank"></a>
-	</div>
-</header>
-<div id="video">
-	<img class="ratio" src="http://placehold.it/16x9"/>
-	<iframe frameborder="0" height="auto" width="100%"
-	src="https://youtube.com/embed/qI4LdAUT0lQ?autoplay=1&controls=1&showinfo=0&autohide=1">
-	</iframe>
 </div>
+<div class="block" id="page2">
+	<h1> Under Construction ^^ </h1>
+</div>
+<div class="block" id="page3">
+	<h1> Under Construction ^^ </h1>
+</div>
+<div class="block" id="page4">
+	<h1> Under Construction ^^ </h1>
+</div>
+<div class="block" id="page5">
+	<h1> Under Construction ^^ </h1>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script>
+$(function(){
+	$(window).load(function(){ // On load
+		$('.block').css({'height':(($(window).height()))+'px'});
+	});
+	$(window).resize(function(){ // On resize
+		$('.block').css({'height':(($(window).height()))+'px'});
+	});
+});
+</script>
