@@ -71,7 +71,7 @@ define(function() {
 					
 					// Enable/Disable buttons for sections
 					// [true, false]
-					enable: true
+					enable: false
 					
 					// Enable/Disable the ability to hide themselves if the window is too small
 					// [true, false]
