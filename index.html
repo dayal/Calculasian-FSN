@@ -1,200 +1,134 @@
-<!DOCTYPE HTML>
-<link rel="stylesheet" type="text/css" href="fontello/css/youtube.css">
-<style>
-
-body {
-	margin: 0;
-}
-
-#sidebar {
-	width: 10%;
-	position: absolute;
-	z-index: 1;
-	text-align: center;
-	padding-top: 220px;
-}
-
-#sidebar a{
-	line-height: 30px;
-	text-align: center;
-	display: block;
-	font-family: "Verdana";
-    text-decoration: none;
-    margin: 35px 0px 35px 25px;
-    color: #fff;
-    border-radius: 15px;
-    font-weight: bolder;
-    text-shadow: black 0.1em 0.1em 0.2em;
-}
-
-
-#content {
-	float: right;
-	width: 100%;
-}
-
-.block {
-	height: 100%;
-	position:relative;
-	width: 100%;
-	min-height: 900px;
-}
-
-#front_page {
-	background-size: cover;
-	background-image: url(background.jpg);
-	background-repeat: no-repeat;
-}
-
-#page2 {
-	background-color: #e6e3d1;
-}
-
-#page3 {
-	background-color: #c05949;
-}
-
-#page4 {
-	background-color: #f5e9eb;
-}
-
-#page5 {
-	background-color: #8fbf99;
-}
-
-header {
-	padding: 50px;
-	text-align: center;
-}
-
-div {
-}
-
-#logo {
-	display: inline;
-}
-
-#logo img {
-	display: inline;
-	max-height: 10%;
-}
-
-#logo img#Acappella {
-	max-height: 5%;
-	margin-left: -30px;
-	margin-bottom: -5px;
-}
-
-#media_icons {
-	display: inline;
-	position: absolute;
-	top: 100px;
-	margin-left: 5%;
-}
-
-#media_icons a {
-	color: #FFFFFF;
-    text-decoration: none;
-    font-size: 20px;
-    display: inline;
-}
-
-#video {
-	position:relative;
-	max-height: 80%;
-	max-width: 70%;
-	margin: 0 auto 100px auto;
-}
-#video img.ratio {
-	display: block;
-	width: 100%;
-	height: auto;
-	opacity: 0;
-}
-#video iframe {
-	position:absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-h1 {
-	margin: 0;
-	text-align: center;
-	padding: 20px;
-}
-</style>
-<div id="sidebar">
-	<a href="#front_page">Home</a>
-	<a href="#page2">Members</a>
-	<a href="#page3">Videos</a>
-	<a href="#page4">About</a>
-	<a href="#page5">Contact</a>
-</div>
-<div id="content">
-	<div class="block" id="front_page">
-		<header>
-			<div id="logo">
-				<img src="Calculasian.png">
-				<img id="Acappella" src="Acappella.png">
+<!DOCTYPE html>
+<html>
+<head>
+	<script data-main="fsn/plugin" src="fsn/require-jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/resetter.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="fontello/css/youtube.css">
+</head>
+<body>
+	<div id="fsn" style="visibility: hidden">
+ 	
+ 		<header>
+			
+			<div class="bar-body">
+				<div class="menu">
+					<nav data-menu="section:all;level:1"></nav>
+					<div class="clear"></div>
+				</div>
 			</div>
-			<div id="media_icons">
-				<a class="icon-facebook" href="http://www.facebook.com/calculasian2013" target="_blank"></a>
-				<a class="icon-sina-weibo" href="http://www.weibo.com/calculasian" target="_blank"></a>
-				<a class="icon-youku" href="http://u.youku.com/Calculasian" target="_blank"></a>
-				<a class="icon-youtube" href="http://www.youtube.com/user/calculasianofficial" target="_blank"></a>
-			</div>
+			
 		</header>
-		<div id="video">
-			<img class="ratio" src="http://placehold.it/16x9"/>
-			<iframe frameborder="0" height="auto" width="100%"
-			src="https://youtube.com/embed/qI4LdAUT0lQ?autoplay=1&controls=1&showinfo=0&autohide=1">
-			</iframe>
-		</div>
-	</div>
-	<div class="block" id="page2">
-		<h1> Under Construction ^^ </h1>
-	</div>
-	<div class="block" id="page3">
-		<h1> Under Construction ^^ </h1>
-	</div>
-	<div class="block" id="page4">
-		<h1> Under Construction ^^ </h1>
-	</div>
-	<div class="block" id="page5">
-		<h1> Under Construction ^^ </h1>
-	</div>
-</div>
 
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script>
-$(function(){
-	$(window).load(function(){ // On load
-		$('.block').css({'height':(($(window).height()))+'px'});
-		$('#sidebar').css({'height':(($(window).height()))+'px'});
-	});
-	$(window).resize(function(){ // On resize
-		$('.block').css({'height':(($(window).height()))+'px'});
-		$('#sidebar').css({'height':(($(window).height()))+'px'});
-	});
-	$(window).scroll(function(){
-	    var $this = $(this);
-	    $('#box1').css('top', 20 - $this.scrollTop());
-	});
-    var $sidebar   = $("#sidebar"), 
-	    $window    = $(window),
-	    offset     = $sidebar.offset()
-    $window.scroll(function() {
-        if ($window.scrollTop() > offset.top) {
-            $sidebar.stop().animate({
-                marginTop: $window.scrollTop() - offset.top
-            });
-        } else {
-            $sidebar.stop().animate({
-                marginTop: 0
-            });
-        }
-    });
-});
-</script>
+		<section data-title="Home">
+ 
+			<article id="home_page" data-title="Home" data-link="home" data-background="fullscreen:images/background.jpg">
+				<div id="logo">
+					<img src="images/Calculasian.png">
+					<img id="Acappella" src="images/Acappella.png">
+				</div>
+				<div id="media_icons">
+					<a class="icon-facebook" href="http://www.facebook.com/calculasian2013" target="_blank"></a>
+					<a class="icon-sina-weibo" href="http://www.weibo.com/calculasian" target="_blank"></a>
+					<a class="icon-youku" href="http://u.youku.com/Calculasian" target="_blank"></a>
+					<a class="icon-youtube" href="http://www.youtube.com/user/calculasianofficial" target="_blank"></a>
+				</div>
+				<div id="video">
+					<img class="ratio" src="http://placehold.it/16x9"/>
+					<iframe frameborder="0" height="auto" width="100%"
+					src="https://youtube.com/embed/qI4LdAUT0lQ?autoplay=1&controls=1&showinfo=0&autohide=1">
+					</iframe>
+				</div>
+			</article>
+
+		</section>
+ 
+		<section data-title="Members">
+ 
+			<article data-title="Members" data-link="zhiyao" data-background="#1b75a3">
+				<h1>Zhiyao He</h1>
+				<h2>Soprano</h2>
+			</article>
+ 
+			<article data-title="Home" data-link="chen" data-background="#1b75a3">
+				<h1>Chen Chen</h1>
+				<h2>Alto/VP</h2>
+			</article>
+
+			<article data-title="Home" data-link="ziming" data-background="#1b75a3">
+				<h1>Ziming Li</h1>
+				<h2>Tenor/VP</h2>
+			</article>
+
+			<article data-title="Home" data-link="xu" data-background="#1b75a3">
+				<h1>Xu Chen</h1>
+				<h2>Baritone</h2>
+			</article>
+
+			<article data-title="Home" data-link="bob" data-background="#1b75a3">
+				<h1>Bob Wang</h1>
+				<h2>Bass/VP</h2>
+			</article>
+
+			<article data-title="Home" data-link="david" data-background="#1b75a3">
+				<h1>David Lu</h1>
+				<h2>Bass</h2>
+			</article>
+ 
+		</section>
+
+		<section data-title="Videos">
+
+			<article data-title="Videos2" data-link="evolution" data-background="#db6816">
+				<h1>Evolution of Chinese Music</h1>
+				<p>This is a medley of some of our favorite Chinese songs from 1960s-2010s. Enjoy!</p>
+				<div id="video">
+					<img class="ratio" src="http://placehold.it/16x9"/>
+					<iframe frameborder="0" height="auto" width="100%"
+					src="https://youtube.com/embed/qI4LdAUT0lQ?autoplay=1&controls=1&showinfo=0&autohide=1">
+					</iframe>
+				</div>
+			</article>
+
+			<article data-title="Videos" data-link="jay" data-background="#db6816">
+				<h1>Jay's Love Songs</h1>
+				<p>Coming soon!</p>
+			</article>
+ 
+ 
+		</section>
+
+		<section data-title="About">
+ 
+			<article data-title="About" data-link="about" data-background="#7f33cc">
+				<h1>About</h1>
+				<p>We are Calculasian -- a Chinese A Cappella group co-founded by 6 alumni of Berkeley Chinese A Cappella.</p>
+				<p>Listen to Berkeley Chinese A Cappella's album here: <a href="https://itunes.apple.com/us/album/here-we-go/id746385241">https://itunes.apple.com/us/album/here-we-go/id746385241</a></p>
+			</article>
+ 
+		</section>
+
+		<section data-title="Contact">
+ 
+			<article data-title="Contact" data-link="contact" data-background="#197883">
+				<h1>Contact Us</h1>
+				<p>Facebook: <a href="http://www.facebook.com/calculasian2013">http://www.facebook.com/calculasian2013</a><p>
+				<p>Youtube: <a href="http://http://www.youtube.com/user/calculasianofficial">http://www.youtube.com/user/calculasianofficial</a></p>
+				<p>Weibo: <a href="http://www.weibo.com/calculasian">http://www.weibo.com/calculasian</a></p>
+				<p>Youku: <a href="http://u.youku.com/Calculasian">http://u.youku.com/Calculasian</a></p>
+			</article>
+ 
+		</section>
+
+		<footer>
+
+			<div class="footer-body">
+				<p>Made by David Lu - Copyright © 2013, Calculasian A Cappella</p>
+			</div>
+
+		</footer>
+ 
+	</div>
+</body>
+</html>
