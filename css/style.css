@@ -318,13 +318,13 @@
 
 #logo img {
 	display: inline;
-	max-height: 15%;
+	max-height: 88px;
 }
 
 #logo img#Acappella {
-	max-height: 8%;
+	max-height: 47px;
 	margin-left: -30px;
-	margin-bottom: -5px;
+	margin-bottom: -4px;
 }
 
 #media_icons {

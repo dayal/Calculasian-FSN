@@ -14,22 +14,15 @@
 	  ga('create', 'UA-47540329-1', 'calculasian.com');
 	  ga('send', 'pageview');
 
-	  var lang = navigator.language || navigator.userLanguage;
-		if(lang.substr(0, 3) == "zh-")
-		location = "cn.html";
-
 		$(document).ready(function() {
-			setTimeout(function (){
-		    $('<iframe />').attr('src', 'https://youtube.com/embed/AEpwAzLISXU?autoplay=1&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#home_video');
-		    $('<iframe />').attr('src', 'https://youtube.com/embed/AEpwAzLISXU?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#jay_video');
-		    $('<iframe />').attr('src', 'https://youtube.com/embed/qI4LdAUT0lQ?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#evolution_video');
-	    }, 500);
+	    $('<iframe />').attr('src', 'http://player.youku.com/embed/XNjY3MTI1Nzgw').attr('frameborder', 0).appendTo('#home_video');
+	    $('<iframe />').attr('src', 'http://player.youku.com/embed/XNjY3MTI1Nzgw').attr('frameborder', 0).appendTo('#jay_video');
+	    $('<iframe />').attr('src', 'http://player.youku.com/embed/XNjQwNzE4NjAw').attr('frameborder', 0).appendTo('#evolution_video');
 		});
 
 	</script>
 	<link rel="stylesheet" type="text/css" href="css/resetter.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="fontello/css/youtube.css">
 	<title>Calculasian A Cappella</title>
 </head>
@@ -47,7 +40,7 @@
 			
 		</header>
 
-		<section data-title="Home">
+		<section data-title="主页">
  
 			<article id="home_page" data-title="Home" data-link="home" data-background="fullscreen:images/background.jpg">
 				<div id="logo">
@@ -71,7 +64,7 @@
 
 		</section>
  
-		<section data-title="Members">
+		<section data-title="成员">
  
 			<article data-title="Zhiyao" data-link="zhiyao" data-background="#1b75a3">
 				<div class="content-left">
@@ -132,18 +125,19 @@
  
 		</section>
 
-		<section data-title="Videos">
+		<section data-title="视频">
 
 			<article data-title="Videos" data-link="evolution" data-background="#db6816">
-				<h1>Evolution of Chinese Music</h1>
-				<p>This is a medley of some of our favorite Chinese songs from 1960s-2010s. Enjoy!</p>
+				<h1>华语流行乐进化史 Evolution of Chinese Music</h1>
+				<p>华语乐坛1960-2010年金曲组曲</p>
 				<div class="video" id="evolution_video">
 					<img class="ratio" src="http://placehold.it/16x9"/>
 				</div>
 			</article>
 
 			<article data-title="Videos2" data-link="jay" data-background="#db6816">
-				<h1>The era of Jay (Part I)</h1>
+				<h1>依然周杰伦(上集) The Era of Jay (Part I)</h1>
+				<p>希望大家喜欢这首歌，祝大家新年快乐，也祝周杰伦生日快乐。</p>
 				<div class="video" id="jay_video">
 					<img class="ratio" src="http://placehold.it/16x9"/>
 				</div>
@@ -152,12 +146,12 @@
  
 		</section>
 
-		<section data-title="About">
+		<section data-title="关于">
  
-			<article data-title="About" data-link="about" data-background="#7f33cc">
-				<h1>About</h1>
-				<p>We are Calculasian -- a Chinese A Cappella group co-founded by 6 alumni of Berkeley Chinese A Cappella.</p>
-				<p>Listen to Berkeley Chinese A Cappella's album here: <a href="https://itunes.apple.com/us/album/here-we-go/id746385241">https://itunes.apple.com/us/album/here-we-go/id746385241</a></p>
+			<article data-title="" data-link="about" data-background="#7f33cc">
+				<h1>关于Calculasian</h1>
+				<p>我们是 Calculasian -- 伯村清唱团的六位曾经成员不甘寂寞自发成立的自嗨新团!</p>
+				<p>在iTunes试听伯村清唱团的首张专辑: <a href="https://itunes.apple.com/us/album/here-we-go/id746385241">https://itunes.apple.com/us/album/here-we-go/id746385241</a></p>
 				<div>
 					<img src="images/calculasian.jpg" height="400">
 				</div>
@@ -165,16 +159,16 @@
  
 		</section>
 
-		<section data-title="Contact">
+		<section data-title="联系我们">
  
 			<article data-title="Contact" data-link="contact" data-background="#197883">
-				<h1>Contact Us</h1>
+				<h1>联系我们</h1>
 				<p>Email: <a href=mailto:"Calculasian@gmail.com">Calculasian@gmail.com</a><p>
 				<p>Facebook: <a href="http://www.facebook.com/calculasian2013">http://www.facebook.com/calculasian2013</a><p>
 				<p>Youtube: <a href="http://http://www.youtube.com/user/calculasianofficial">http://www.youtube.com/user/calculasianofficial</a></p>
-				<p>Weibo: <a href="http://www.weibo.com/calculasian">http://www.weibo.com/calculasian</a></p>
-				<p>Youku: <a href="http://u.youku.com/Calculasian">http://u.youku.com/Calculasian</a></p>
-				<p>Renren: <a href="http://page.renren.com/601850872">http://page.renren.com/601850872</a></p>
+				<p>微博: <a href="http://www.weibo.com/calculasian">http://www.weibo.com/calculasian</a></p>
+				<p>优酷: <a href="http://u.youku.com/Calculasian">http://u.youku.com/Calculasian</a></p>
+				<p>人人: <a href="http://page.renren.com/601850872">http://page.renren.com/601850872</a></p>
 			</article>
  
 		</section>
