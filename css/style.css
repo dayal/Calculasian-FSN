@@ -25,7 +25,7 @@
 		font-weight: 300;
 		margin-bottom: 30px;
 	}
-	h2{
+	h2 {
 		font-size: 20px;
 		line-height: 20px;
 		text-transform: uppercase;
@@ -38,7 +38,7 @@
 		font-weight: 300;
 	}
 	p {
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 	}
 	a {
 		color: rgb(108, 185, 255);
@@ -316,15 +316,12 @@
 	margin-bottom: 20px;
 }
 
-#logo img {
-	display: inline;
-	max-height: 88px;
-}
-
-#logo img#Acappella {
-	max-height: 47px;
-	margin-left: -30px;
-	margin-bottom: -4px;
+#logo p {
+	font-size: 60px;
+    margin-top: 40px;
+    font-weight: bold;
+    text-shadow: 3px 3px #686666;
+    letter-spacing: 3px;
 }
 
 #media_icons {
@@ -343,7 +340,7 @@
 .video {
 	position:relative;
 	max-height: 80%;
-	margin: 0 auto 100px auto;
+	margin: 10px auto 100px auto;
 }
 .video img.ratio {
 	display: block;
