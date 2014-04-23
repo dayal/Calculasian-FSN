@@ -154,7 +154,7 @@ define(function() {
 			
 			// Page body width in pixel, 0 to set width 100%
 			// *number*
-			width: 980
+			width: 1200
 			
 			// Page body alignment relative to the page
 			// [left, center, right]
