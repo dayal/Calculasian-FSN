@@ -6,28 +6,25 @@
 	<script data-main="fsn/plugin" src="fsn/require-jquery.js"></script>
 	<script>
 		//Google Analytics
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		// })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-47540329-1', 'calculasian.com');
-	  ga('send', 'pageview');
+		// ga('create', 'UA-47540329-1', 'calculasian.com');
+		// ga('send', 'pageview');
 
-	  var lang = navigator.language || navigator.userLanguage;
+		var lang = navigator.language || navigator.userLanguage;
 		if(lang.substr(0, 3) == "zh-")
 		location = "cn.html";
-
-		$(document).ready(function() {
-
-			// Trying to fix the issue of videos loading before content loads
-			setTimeout(function (){
-		    $('<iframe />').attr('src', 'https://youtube.com/embed/IrObyn-T-vo?autoplay=1&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#home_video');
-		    $('<iframe />').attr('src', 'https://youtube.com/embed/qI4LdAUT0lQ?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#evolution_video');
-		    $('<iframe />').attr('src', 'https://youtube.com/embed/AEpwAzLISXU?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#jay_video');
-		    $('<iframe />').attr('src', 'https://youtube.com/embed/JMyZDJBMC0w?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#time_video');
-		    $('<iframe />').attr('src', 'https://youtube.com/embed/IrObyn-T-vo?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#frozen_video');
-	    }, 500);
+		$(function() {
+			$('#fsn').on('fsn-ready', function(e) {
+			    $('<iframe />').attr('src', 'https://youtube.com/embed/IrObyn-T-vo?autoplay=1&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#home_video');
+			    $('<iframe />').attr('src', 'https://youtube.com/embed/qI4LdAUT0lQ?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#evolution_video');
+			    $('<iframe />').attr('src', 'https://youtube.com/embed/AEpwAzLISXU?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#jay_video');
+			    $('<iframe />').attr('src', 'https://youtube.com/embed/JMyZDJBMC0w?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#time_video');
+			    $('<iframe />').attr('src', 'https://youtube.com/embed/IrObyn-T-vo?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#frozen_video');
+			});
 		});
 
 	</script>
