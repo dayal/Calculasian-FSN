@@ -3,40 +3,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
 
-	<script data-main="fsn/plugin" src="fsn/require-jquery.js"></script>
-	<script>
-		//Google Analytics
-
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-XXXXX-X']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
-		var lang = navigator.language || navigator.userLanguage;
-		if(lang.substr(0, 3) == "zh-")
-		location = "cn.html";
-
-		$(function() {
-			$('#fsn').on('fsn-ready', function(e) {
-			    $('<iframe />').attr('src', 'https://youtube.com/embed/IrObyn-T-vo?autoplay=1&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#home_video');
-			    $('<iframe />').attr('src', 'https://youtube.com/embed/qI4LdAUT0lQ?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#evolution_video');
-			    $('<iframe />').attr('src', 'https://youtube.com/embed/AEpwAzLISXU?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#jay_video');
-			    $('<iframe />').attr('src', 'https://youtube.com/embed/JMyZDJBMC0w?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#time_video');
-			    $('<iframe />').attr('src', 'https://youtube.com/embed/IrObyn-T-vo?autoplay=0&controls=1&showinfo=0&autohide=1').attr('frameborder', 0).appendTo('#frozen_video');
-			});
-		});
-	</script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script data-main="js/fsn/plugin" src="js/fsn/require-jquery.js"></script>
+	<script src="js/calculasian.js"></script>
 	<script src="http://coinwidget.com/widget/coin.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/resetter.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="fsn/resetter.css" />
+	<link rel="stylesheet" type="text/css" href="fsn/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/calculasian.css" />
 	<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="fontello/css/youtube.css" />
+	<link rel="stylesheet" type="text/css" href="css/fontello/css/youtube.css" />
 	<title>Calculasian Official Website</title>
 </head>
 <body>
@@ -54,25 +28,22 @@
 		</header>
 
 		<section data-title="Home">
- 
-			<article id="home_page" data-title="Home" data-link="home" data-background="fullscreen:images/background.jpg">
-				<div id="logo">
-					<p>CALCULASIAN</p>
-				</div>
-				<div id="media_icons">
-					<a class="icon-facebook" href="http://www.facebook.com/calculasian2013" target="_blank"></a>
-					<a class="icon-sina-weibo" href="http://www.weibo.com/calculasian" target="_blank"></a>
-					<a class="icon-youku" href="http://u.youku.com/Calculasian" target="_blank"></a>
-					<a class="icon-youtube" href="http://www.youtube.com/user/calculasianofficial" target="_blank"></a>
-				</div>
-				<div class="video" id="home_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-				<div id="language">
-					<a href="cn.html">简</a>
-					|
-					<a href="index.html">EN</a>
-				<div>
+
+ 			<article id="home-page" data-title="Home" data-link="home" data-background="fullscreen:images/background.jpg">
+			  <div id="logo">
+			    <p>CALCULASIAN</p>
+			  </div>
+			  <div id="media-icons">
+			    <a class="icon-facebook" href="http://www.facebook.com/calculasian2013" target="_blank"></a>
+			    <a class="icon-sina-weibo" href="http://www.weibo.com/calculasian" target="_blank"></a>
+			    <a class="icon-youku" href="http://u.youku.com/Calculasian" target="_blank"></a>
+			    <a class="icon-youtube" href="http://www.youtube.com/user/calculasianofficial" target="_blank"></a>
+			  </div>
+			  <div id="language">
+			    <a href="cn.html">简</a>
+			    |
+			    <a href="index.html">EN</a>
+			  <div>
 			</article>
 
 		</section>
@@ -124,43 +95,14 @@
 			<article data-link="yifei" data-background="fullscreen:images/yifei.jpg">
 				<div class="content-left" style="color: black">
 					<h1>Yifei Dong 董忆非</h1>
-					<h2>Manager</h2>
 				</div>
 			</article>
  
 		</section>
 
-		<section data-title="Videos">
+		<section data-title="Videos" id="videos">
 
-			<article data-link="evolution" data-background="#b2453b">
-				<h1>Evolution of Chinese Music</h1>
-				<p>This is a medley of some of our favorite Chinese songs from 1960s-2010s. Enjoy!</p>
-				<div class="video" id="evolution_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-			</article>
-
-			<article data-link="jay" data-background="#1b75a3">
-				<h1>The Era of Jay (Part I)</h1>
-				<div class="video" id="jay_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-			</article>
-
-			<article data-link="time" data-background="#db6816">
-				<h1>Where Did Time Fly</h1>
-				<div class="video" id="time_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-			</article>
-
-			<article data-link="frozen" data-background="#dddba2">
-				<h1>FROZEN</h1>
-				<div class="video" id="frozen_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-			</article>
- 
+			<!-- Videos pages to be dynamically generated --> 
  
 		</section>
 
@@ -169,7 +111,6 @@
 			<article data-link="about" data-background="#7f33cc">
 				<h1>About</h1>
 				<p>We are Calculasian -- a Chinese A Cappella group co-founded by 6 alumni of Berkeley Chinese A Cappella.</p>
-				<p>Listen to Berkeley Chinese A Cappella's album here: <a href="https://itunes.apple.com/us/album/here-we-go/id746385241">https://itunes.apple.com/us/album/here-we-go/id746385241</a></p>
 				<div>
 					<img src="images/calculasian.jpg" height="400" style="margin-right: 50px">
 					<img src="images/calculasian2.jpg" height="400">
@@ -178,10 +119,9 @@
  
 		</section>
 
-		<section data-title="Contact">
+		<section data-title="Contact" id="contact">
  
 			<article data-link="contact" data-background="#197883">
-				<div class="content-left.600-400">
 					<h1>Contact Us</h1>
 					<p>Email: <a href=mailto:"Calculasian@gmail.com">Calculasian@gmail.com</a></p>
 					<p>Facebook: <a href="http://facebook.com/calculasian2013">http://facebook.com/calculasian2013</a></p>
@@ -217,20 +157,6 @@
 						});
 						</script>
 					</div>
-				</div>
-
-				<div class="content-right.600-400">
-					<!-- Test Ad -->
-					<ins class="adsbygoogle"
-					     style="display:inline-block;width:300px;height:250px"
-					     data-ad-client="ca-pub-8506793762451982"
-					     data-ad-slot="2410061155">
-					</ins>
-					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-				</div>
-
 			</article>
 			
 		</section>
@@ -238,7 +164,7 @@
 		<footer>
 
 			<div class="footer-body">
-				<p>Made by David Lu - Copyright © 2014, Calculasian | Source Code: https://github.com/dayal/Calculasian</p>
+				<p>Made by David Lu - Copyright © 2013-2014, Calculasian | https://github.com/dayal/Calculasian</p>
 			</div>
 
 		</footer>

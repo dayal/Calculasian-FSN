@@ -3,42 +3,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
 
-	<script data-main="fsn/plugin" src="fsn/require-jquery.js"></script>
-	<script>
-		//Google Analytics
-
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-XXXXX-X']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
-		$(function() {
-			$('#fsn').on('fsn-ready', function(e) {
-				$('<iframe />').attr('src', 'http://player.youku.com/embed/XNjk4Njg5OTY0').attr('frameborder', 0).appendTo('#home_video');
-				$('<iframe />').attr('src', 'http://player.youku.com/embed/XNjQwNzE4NjAw').attr('frameborder', 0).appendTo('#evolution_video');
-				$('<iframe />').attr('src', 'http://player.youku.com/embed/XNjY3MTI1Nzgw').attr('frameborder', 0).appendTo('#jay_video');
-				$('<iframe />').attr('src', 'http://player.youku.com/embed/XNjg0MTU4MDAw').attr('frameborder', 0).appendTo('#time_video');
-				$('<iframe />').attr('src', 'http://player.youku.com/embed/XNjk4Njg5OTY0').attr('frameborder', 0).appendTo('#frozen_video');
-			});
-		});
-	</script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script data-main="js/fsn/plugin" src="js/fsn/require-jquery.js"></script>
+	<script src="js/calculasian.js"></script>
+	<script src="js/redirect.js"></script>
 	<script src="http://coinwidget.com/widget/coin.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/resetter.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="fsn/resetter.css" />
+	<link rel="stylesheet" type="text/css" href="fsn/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/calculasian.css" />
 	<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="fontello/css/youtube.css" />
+	<link rel="stylesheet" type="text/css" href="css/fontello/css/youtube.css" />
 	<title>Calculasian 官方网站</title>
 </head>
 <body>
 	<div id="fsn" style="visibility: hidden">
- 	
- 		<header>
+	
+		<header>
 			
 			<div class="bar-body">
 				<div class="menu">
@@ -51,18 +30,15 @@
 
 		<section data-title="主页">
  
-			<article id="home_page" data-title="Home" data-link="home" data-background="fullscreen:images/background.jpg">
+			<article id="home-page" data-title="Home" data-link="home" data-background="fullscreen:images/background.jpg">
 				<div id="logo">
 					<p>CALCULASIAN</p>
 				</div>
-				<div id="media_icons">
+				<div id="media-icons">
 					<a class="icon-facebook" href="http://www.facebook.com/calculasian2013" target="_blank"></a>
 					<a class="icon-sina-weibo" href="http://www.weibo.com/calculasian" target="_blank"></a>
 					<a class="icon-youku" href="http://u.youku.com/Calculasian" target="_blank"></a>
 					<a class="icon-youtube" href="http://www.youtube.com/user/calculasianofficial" target="_blank"></a>
-				</div>
-				<div class="video" id="home_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
 				</div>
 				<div id="language">
 					<a href="cn.html">简</a>
@@ -120,45 +96,15 @@
 			<article data-link="yifei" data-background="fullscreen:images/yifei.jpg">
 				<div class="content-left" style="color: black">
 					<h1>Yifei Dong 董忆非</h1>
-					<h2>Manager</h2>
 				</div>
 			</article>
  
 		</section>
 
-		<section data-title="视频">
-
-			<article data-link="evolution" data-background="#b2453b">
-				<h1>华语流行乐进化史 Evolution of Chinese Music</h1>
-				<p>华语乐坛1960-2010年金曲组曲</p>
-				<div class="video" id="evolution_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-			</article>
-
-			<article data-link="jay" data-background="#1b75a3">
-				<h1>依然周杰伦(上集) The Era of Jay (Part I)</h1>
-				<p>希望大家喜欢这首歌，祝大家新年快乐，也祝周杰伦生日快乐。</p>
-				<div class="video" id="jay_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-			</article>
-
-			<article data-link="time" data-background="#db6816">
-				<h1>时间都去哪儿了 Where Did Time Fly</h1>
-				<div class="video" id="time_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-			</article>
-
-			<article data-link="frozen" data-background="#dddba2">
-				<h1>冰雪奇缘 Frozen</h1>
-				<div class="video" id="frozen_video">
-					<img class="ratio" src="http://placehold.it/16x9"/>
-				</div>
-			</article>
+		<section data-title="视频" id="videos"> 
  
- 
+			<!-- Videos pages to be dynamically generated --> 
+
 		</section>
 
 		<section data-title="关于">
@@ -166,7 +112,6 @@
 			<article data-link="about" data-background="#7f33cc">				
 				<h1>关于Calculasian</h1>
 				<p>我们是 Calculasian -- 伯村清唱团的六位曾经成员不甘寂寞自发成立的自嗨新团!</p>
-				<p>在iTunes试听伯村清唱团的首张专辑: <a href="https://itunes.apple.com/us/album/here-we-go/id746385241">https://itunes.apple.com/us/album/here-we-go/id746385241</a></p>
 				<div>
 					<img src="images/calculasian.jpg" height="400" style="margin-right: 50px">
 					<img src="images/calculasian2.jpg" height="400">
@@ -178,73 +123,51 @@
 		<section data-title="联系我们">
  
 			<article data-link="contact" data-background="#197883">
-				<div class="content-left.600-400">
-					<h1>联系我们</h1>
-					<p>Email: <a href=mailto:"Calculasian@gmail.com">Calculasian@gmail.com</a></p>
-					<p>Facebook: <a href="http://facebook.com/calculasian2013">http://facebook.com/calculasian2013</a></p>
-					<p>Youtube: <a href="http://youtube.com/user/calculasianofficial">http://youtube.com/user/calculasianofficial</a></p>
-					<p>Twitter: <a href="http://twitter.com/Calculasian">http://twitter.com/Calculasian</a></p>
-					<p>Instagram: <a href="http://instagram.com/calculasian">http://instagram.com/calculasian</a></p>
-					<p>微博: <a href="http://weibo.com/calculasian">http://weibo.com/calculasian</a></p>
-					<p>优酷: <a href="http://u.youku.com/Calculasian">http://u.youku.com/Calculasian</a></p>
-					<p>人人: <a href="http://page.renren.com/601850872">http://page.renren.com/601850872</a></p>
-					<p>虾米: <a href="http://i.xiami.com/calculasian">http://i.xiami.com/calculasian</a></p>
 
-					<!-- Paypal Donation -->
-					<form class="donation" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-						">
-						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-					</form>
-					<div class="donation" style="height: 31px; margin-left: 50px">
-						<script>
-						CoinWidgetCom.go({
-							wallet_address: "15WyXJ7mGUmiBAEibUSzvQ94h78JRFYfQ4"
-							, currency: "bitcoin"
-							, counter: "amount"
-							, alignment: "bl"
-							, qrcode: true
-							, auto_show: false
-							, lbl_button: "Donate"
-							, lbl_address: "My Bitcoin Address:"
-							, lbl_count: "donations"
-							, lbl_amount: "BTC"
-						});
-						</script>
-					</div>
-				</div>
+				<h1>联系我们</h1>
+				<p>Email: <a href=mailto:"Calculasian@gmail.com">Calculasian@gmail.com</a></p>
+				<p>Facebook: <a href="http://facebook.com/calculasian2013">http://facebook.com/calculasian2013</a></p>
+				<p>Youtube: <a href="http://youtube.com/user/calculasianofficial">http://youtube.com/user/calculasianofficial</a></p>
+				<p>Twitter: <a href="http://twitter.com/Calculasian">http://twitter.com/Calculasian</a></p>
+				<p>Instagram: <a href="http://instagram.com/calculasian">http://instagram.com/calculasian</a></p>
+				<p>微博: <a href="http://weibo.com/calculasian">http://weibo.com/calculasian</a></p>
+				<p>优酷: <a href="http://u.youku.com/Calculasian">http://u.youku.com/Calculasian</a></p>
+				<p>人人: <a href="http://page.renren.com/601850872">http://page.renren.com/601850872</a></p>
+				<p>虾米: <a href="http://i.xiami.com/calculasian">http://i.xiami.com/calculasian</a></p>
 
-				<div class="content-right.600-400">
-					<!-- Test Ad -->
-					<ins class="adsbygoogle"
-					     style="display:inline-block;width:300px;height:250px"
-					     data-ad-client="ca-pub-8506793762451982"
-					     data-ad-slot="2410061155">
-					</ins>
+				<!-- Paypal Donation -->
+				<form class="donation" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+					">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>
+				<div class="donation" style="height: 31px; margin-left: 50px">
 					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
+					CoinWidgetCom.go({
+						wallet_address: "15WyXJ7mGUmiBAEibUSzvQ94h78JRFYfQ4"
+						, currency: "bitcoin"
+						, counter: "amount"
+						, alignment: "bl"
+						, qrcode: true
+						, auto_show: false
+						, lbl_button: "Donate"
+						, lbl_address: "My Bitcoin Address:"
+						, lbl_count: "donations"
+						, lbl_amount: "BTC"
+					});
 					</script>
 				</div>
 
 			</article>
-			<!-- Test Ad -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:300px;height:250px"
-			     data-ad-client="ca-pub-8506793762451982"
-			     data-ad-slot="2410061155">
-			</ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
  
 		</section>
 
 		<footer>
 
 			<div class="footer-body">
-				<p>Made by David Lu - Copyright © 2014, Calculasian | 源代码: https://github.com/dayal/Calculasian</p>
+				<p>Made by David Lu - Copyright © 2013-2014, Calculasian | https://github.com/dayal/Calculasian</p>
 			</div>
 
 		</footer>
