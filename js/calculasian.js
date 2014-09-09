@@ -1,11 +1,20 @@
 
 $(function() {
 
-	// // Include Templates
-	// $('#home').load("templates/home.html");
-	// $('#members').load("templates/members.html");
-	// $('#about').load("templates/about.html");
-	// $('#contact').load("templates/contact.html");
+	// Include Templates
+	$('#home').load('templates/home.html', null, function() {
+		$('#home-page').append($homeVideo);
+	});
+	$('#members').load('templates/members.html');
+	$('#aboutEN').load('templates/aboutEN.html');
+	$('#aboutCN').load('templates/aboutCN.html');
+
+	$('#contactEN').load('templates/contactEN.html', null, function() {
+		$('<div>').appendTo('#contact-page').load('templates/donation.html');
+	});
+	$('#contactCN').load('templates/contactCN.html', null, function() {
+		$('<div>').appendTo('#contact-page').load('templates/donation.html');
+	});
 
 	// Construct video pages
 	// Iterate through video objects
@@ -39,7 +48,7 @@ $(function() {
 
 		// Set home video
 		if (video.isHomeVideo) {
-			$('#home-page').append($videoDiv.clone());
+			var $homeVideo = $videoDiv.clone();
 		}
 	}
 	// Finish constructing video pages
@@ -168,4 +177,5 @@ var VIDEOS =
       "link": "https://youtube.com/embed/czXUyd10soY?autoplay=0&controls=1&showinfo=0&autohide=1"
     }
   }
-]
+];
+

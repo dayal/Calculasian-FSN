@@ -59,3 +59,8 @@
 	display: inline-block;
 	vertical-align: middle;
 }
+#bitcoin {
+	border: 0;
+	display: block;
+	
+}
