@@ -21,6 +21,7 @@ $(function() {
 	var urls = [],
 		  $homeVideo = $(),
 			homeVideoIndex = 0;
+
 	for (var i=0; i < VIDEOS.length; i++) {
 		var video = VIDEOS[i],
 				name = video.name,
@@ -45,7 +46,7 @@ $(function() {
 			.append($('<p>', {text: description}))
 			.append($videoDiv);
 		$videoDiv.append($('<img>', {'class': 'ratio', 'src': 'http://placehold.it/16x9'}));
-		$videoDiv.append($('<div>', {'class': 'loading icon-spin6 animate-spin'}));
+		$videoDiv.append($('<div>', {'class': 'loading icon-spin6 animate-spin loading' + i}));
 		$('#videos').append($article);
 
 		// Set home video
@@ -54,8 +55,8 @@ $(function() {
 			homeVideoIndex = i;
 		}
 	}
-	// Finish constructing video pages
 
+	// Finish constructing video pages
 	$('#fsn').on('fsn-ready', function(e) {  // FSN is ready
 
 			// Load home page video
@@ -75,8 +76,13 @@ $(function() {
 				// Skip if iframe is already present
 				$('.video' + i).each(function(index, element) {
 					if ($(element).has('iframe').length == 0) {
-						$(element).append($('<iframe>', {'src': urls[i], 'frameborder': 0}));
+						$iframe = $('<iframe>', {'src': urls[i], 'frameborder': 0});
+						$(element).append($iframe);
 					}
+
+					$iframe[0].onload = function() {
+						$('.loading' + i).remove();
+					};
 				});
 			});
 	});
