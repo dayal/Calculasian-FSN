@@ -58,7 +58,7 @@ $(function() {
 	$('#fsn').on('fsn-ready', function(e) {  // FSN is ready
 
 			// Load home page video
-			$('#home-page').on('fsn-current', function(e, $page) {
+			$('#home').on('fsn-current', function(e, $page) {
 
 				// Skip if iframe is already present
 					if ($('#home-page .video').has('iframe').length == 0) {
