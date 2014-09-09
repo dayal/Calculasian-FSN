@@ -45,6 +45,7 @@ $(function() {
 			.append($('<p>', {text: description}))
 			.append($videoDiv);
 		$videoDiv.append($('<img>', {'class': 'ratio', 'src': 'http://placehold.it/16x9'}));
+		$videoDiv.append($('<div>', {'class': 'loading icon-spin6 animate-spin'}));
 		$('#videos').append($article);
 
 		// Set home video

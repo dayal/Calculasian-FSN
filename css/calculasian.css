@@ -11,10 +11,10 @@
 
 #logo p {
 	font-size: 60px;
-    margin-top: 40px;
-    font-weight: bold;
-    text-shadow: 3px 3px #686666;
-    letter-spacing: 3px;
+	margin-top: 40px;
+	font-weight: bold;
+	text-shadow: 3px 3px #686666;
+	letter-spacing: 3px;
 }
 
 #media-icons {
@@ -62,5 +62,11 @@
 #bitcoin {
 	border: 0;
 	display: block;
-	
+}
+.loading {
+	font-size: 50px;
+	position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
 }

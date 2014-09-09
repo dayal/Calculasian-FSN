@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'youtube';
-  src: url('../font/youtube.eot?74079506');
-  src: url('../font/youtube.eot?74079506#iefix') format('embedded-opentype'),
-       url('../font/youtube.woff?74079506') format('woff'),
-       url('../font/youtube.ttf?74079506') format('truetype'),
-       url('../font/youtube.svg?74079506#youtube') format('svg');
+  font-family: 'calculasian';
+  src: url('../font/calculasian.eot?10865618');
+  src: url('../font/calculasian.eot?10865618#iefix') format('embedded-opentype'),
+       url('../font/calculasian.woff?10865618') format('woff'),
+       url('../font/calculasian.ttf?10865618') format('truetype'),
+       url('../font/calculasian.svg?10865618#calculasian') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,14 +13,14 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: 'youtube';
-    src: url('../font/youtube.svg?74079506#youtube') format('svg');
+    font-family: 'calculasian';
+    src: url('../font/calculasian.svg?10865618#calculasian') format('svg');
   }
 }
 */
  
  [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "youtube";
+  font-family: "calculasian";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -50,8 +50,9 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-youtube:before { content: '\e803'; } /* '' */
 .icon-facebook:before { content: '\e800'; } /* '' */
-.icon-renren:before { content: '\e802'; } /* '' */
 .icon-sina-weibo:before { content: '\e801'; } /* '' */
+.icon-renren:before { content: '\e802'; } /* '' */
+.icon-youtube:before { content: '\e803'; } /* '' */
 .icon-youku:before { content: '\e804'; } /* '' */
+.icon-spin6:before { content: '\e805'; } /* '' */
