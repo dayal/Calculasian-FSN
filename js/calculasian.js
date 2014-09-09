@@ -39,7 +39,7 @@ $(function() {
 		}
 
 		// constuct DOM
-		var $article = $('<article>', {'data-url': name, 'data-background': bgcolor, 'id': 'video-page' + i});
+		var $article = $('<article>', {'data-link': name, 'data-background': bgcolor, 'id': 'video-page' + i});
 		var $videoDiv = $('<div>', {'class': 'video video' + i});  // Use class instead of id because there can be multiple instances of the same video
 		$article.append($('<h1>', {text: title}))
 			.append($('<p>', {text: description}))
