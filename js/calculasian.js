@@ -10,7 +10,7 @@ $(function() {
 
 				// Skip if iframe is already present
 					if ($('#home-page .video').has('iframe').length == 0) {
-						$('#home-page .video').append($('<iframe>', {'src': urls[7], 'frameborder': 0}));
+						$('#home-page .video').append($('<iframe>', {'src': urls[6], 'frameborder': 0}));
 					}
 			});
 
