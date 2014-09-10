@@ -1,64 +1,10 @@
-
 $(function() {
 
-	// Include Templates
-	$('#home').load('templates/home.html', null, function() {
-		$('#home-page').append($homeVideo);
-	});
-	$('#members').load('templates/members.html');
-	$('#aboutEN').load('templates/aboutEN.html');
-	$('#aboutCN').load('templates/aboutCN.html');
-
-	$('#contactEN').load('templates/contactEN.html', null, function() {
-		$('<div>').appendTo('#contact-page').load('templates/donation.html');
-	});	
-	$('#contactCN').load('templates/contactCN.html', null, function() {
-		$('<div>').appendTo('#contact-page').load('templates/donation.html');
-	});
-
-	// Construct video pages (without video iframes)
-	// Iterate through video objects
 	var urls = [],
-		  $homeVideo = $(),
 			homeVideoIndex = 0;
-
-	for (var i=0; i < VIDEOS.length; i++) {
-		var video = VIDEOS[i],
-				name = video.name,
-				bgcolor = video.bgcolor,
-				isHomeVideo = video.isHomeVideo,
-				title,
-				desciption;
-		if (isPageCN) {
-			title = video.cn.title;
-			description = video.cn.description;
-			urls[i] = video.cn.url;
-		} else {
-			title = video.en.title;
-			description = video.en.description;
-			urls[i] = video.en.url;
-		}
-
-		// constuct DOM
-		var $article = $('<article>', {'data-link': name, 'data-background': bgcolor, 'id': 'video-page' + i});
-		var $videoDiv = $('<div>', {'class': 'video video' + i});  // Use class instead of id because there can be multiple instances of the same video
-		$article.append($('<h1>', {text: title}))
-			.append($('<p>', {text: description}))
-			.append($videoDiv);
-		$videoDiv.append($('<img>', {'class': 'ratio', 'src': 'http://placehold.it/16x9'}));
-		$videoDiv.append($('<div>', {'class': 'loading icon-spin6 animate-spin loading' + i}));
-		$('#videos').append($article);
-
-		// Set home video
-		if (video.isHomeVideo) {
-			$homeVideo = $videoDiv.clone();
-			homeVideoIndex = i;
-		}
-	}
-
-	// Finish constructing video pages
-	$('#fsn').on('fsn-ready', function(e) {  // FSN is ready
-
+	loadPages(function() {
+		// Finish constructing video pages
+		$('#fsn').on('fsn-ready', function(e) {  // FSN is ready
 			// Load home page video
 			$('#home').on('fsn-current', function(e, $page) {
 
@@ -84,9 +30,71 @@ $(function() {
 						$('.loading' + i).remove();
 					};
 				});
+
 			});
+		});
 	});
+
+	function loadPages(callback) {
+		$('#fsn').load(lang +'.html', null, function() {
+			// Include Templates
+			$('#home').load('templates/home.html', null, function() {
+				loadVideoPages();
+			});
+			$('#members').load('templates/members.html');
+			$('#aboutEN').load('templates/aboutEN.html');
+			$('#aboutCN').load('templates/aboutCN.html');
+
+			$('#contactEN').load('templates/contactEN.html', null, function() {
+				$('<div>').appendTo('#contact-page').load('templates/donation.html');
+			});	
+			$('#contactCN').load('templates/contactCN.html', null, function() {
+				$('<div>').appendTo('#contact-page').load('templates/donation.html');
+			});
+			callback();
+		});
+	};
+
+	function loadVideoPages() {
+		// Construct video pages (without video iframes)
+		// Iterate through video objects
+
+		for (var i=0; i < VIDEOS.length; i++) {
+			var video = VIDEOS[i],
+					name = video.name,
+					bgcolor = video.bgcolor,
+					isHomeVideo = video.isHomeVideo,
+					title,
+					desciption;
+			if (lang === 'cn') {
+				title = video.cn.title;
+				description = video.cn.description;
+				urls[i] = video.cn.url;
+			} else {
+				title = video.en.title;
+				description = video.en.description;
+				urls[i] = video.en.url;
+			}
+
+			// constuct DOM
+			var $article = $('<article>', {'data-link': name, 'data-background': bgcolor, 'id': 'video-page' + i});
+			var $videoDiv = $('<div>', {'class': 'video video' + i});  // Use class instead of id because there can be multiple instances of the same video
+			$article.append($('<h1>', {text: title}))
+				.append($('<p>', {text: description}))
+				.append($videoDiv);
+			$videoDiv.append($('<img>', {'class': 'ratio', 'src': 'http://placehold.it/16x9'}));
+			$videoDiv.append($('<div>', {'class': 'loading icon-spin6 animate-spin loading' + i}));
+			$('#videos').append($article);
+
+			// Set home video
+			if (video.isHomeVideo) {
+				$('#home-page').append($videoDiv.clone());
+			}
+		}	
+	};
 });
+
+
 
 // Google Analytics starts
 var _gaq = _gaq || [];
@@ -98,9 +106,24 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 
-// Get current page
-var url = window.location.pathname;
-var isPageCN = url.slice(url.lastIndexOf('/') + 1).match('cn\.html.*');
+// Detect URL and browser language
+var browserLanguage = navigator.language || navigator.userLanguage;
+var lang = 'en';
+if (getParameterByName('lang') === 'cn') {
+  lang = 'cn';
+} else if (getParameterByName('lang') === 'en') {
+  lang = 'en';
+} else if (browserLanguage.substr(0, 3) == "zh-") {
+  lang = 'cn';
+}
+
+// http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 // Initialize video data
 var VIDEOS =
