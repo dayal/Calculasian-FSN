@@ -1,6 +1,7 @@
 $(function() {
 
-	var urls = [],
+	var lang = getLanguage(),
+			urls = [],
 			homeVideoIndex = 0;
 	loadPages(function() {
 		// Finish constructing video pages
@@ -36,7 +37,7 @@ $(function() {
 	});
 
 	function loadPages(callback) {
-		$('#fsn').load(lang +'.html', null, function() {
+		$('#fsn').load('templates/' + lang +'.html', null, function() {
 			// Include Templates
 			$('#home').load('templates/home.html', null, function() {
 				loadVideoPages();
@@ -94,28 +95,21 @@ $(function() {
 	};
 });
 
-
-
-// Google Analytics starts
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-XXXXX-X']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-
 // Detect URL and browser language
-var browserLanguage = navigator.language || navigator.userLanguage;
-var lang = 'en';
-if (getParameterByName('lang') === 'cn') {
-  lang = 'cn';
-} else if (getParameterByName('lang') === 'en') {
-  lang = 'en';
-} else if (browserLanguage.substr(0, 3) == "zh-") {
-  lang = 'cn';
+function getLanguage() {
+	var browserLanguage = navigator.language || navigator.userLanguage;
+	var lang = 'en';
+	if (getParameterByName('lang') === 'cn') {
+	  lang = 'cn';
+	} else if (getParameterByName('lang') === 'en') {
+	  lang = 'en';
+	} else if (browserLanguage.substr(0, 3) == "zh-") {
+	  lang = 'cn';
+	}
+
+	return lang;
 }
+
 
 // http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 function getParameterByName(name) {
