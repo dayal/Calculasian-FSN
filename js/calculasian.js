@@ -62,7 +62,9 @@ $(function() {
 	function loadVideoPages() {
 		// Construct video pages (without video iframes)
 		// Iterate through video objects
-
+      setTimeout(
+        function() 
+        {
 		for (var i=0; i < VIDEOS.length; i++) {
 			var video = VIDEOS[i],
 					name = video.name,
@@ -94,8 +96,9 @@ $(function() {
 				$('#home-page').append($videoDiv.clone());
 				homeVideoId = i;
 			}
-		}	
+		}	}, 2000);
 	};
+
 });
 
 // Detect URL and browser language
