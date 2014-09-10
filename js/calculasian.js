@@ -1,6 +1,7 @@
 $(function() {
 
 	var lang = getLanguage(),
+			homeVideoId,
 			urls = [];
 	loadPages(function() {
 		// Finish constructing video pages
@@ -10,7 +11,10 @@ $(function() {
 
 				// Skip if iframe is already present
 					if ($('#home-page .video').has('iframe').length == 0) {
-						$('#home-page .video').append($('<iframe>', {'src': urls[6], 'frameborder': 0}));
+						$('#home-page .video').append($('<iframe>', {'src': urls[homeVideoId], 'frameborder': 0}));
+						$('#home-page iframe')[0].onload = function() {
+							$('.loading' + homeVideoId).remove();
+						};
 					}
 			});
 
@@ -88,6 +92,7 @@ $(function() {
 			// Set home video
 			if (video.isHomeVideo) {
 				$('#home-page').append($videoDiv.clone());
+				homeVideoId = i;
 			}
 		}	
 	};
