@@ -40,23 +40,23 @@ $(function() {
 	});
 
 	function loadPages(callback) {
-		$('#fsn').load('templates/' + lang +'.html', null, function() {
-			// Include Templates
-			$('#home').load('templates/home.html', null, function() {
-				loadVideoPages();
-			});
-			$('#members').load('templates/members.html');
-			$('#aboutEN').load('templates/aboutEN.html');
-			$('#aboutCN').load('templates/aboutCN.html');
+  		$('#fsn').load('templates/' + lang +'.html', null, function() {
+  			// Include Templates
+  			$('#home').load('templates/home.html', null, function() {
+  				loadVideoPages();
+  			});
+  			$('#members').load('templates/members.html');
+  			$('#aboutEN').load('templates/aboutEN.html');
+  			$('#aboutCN').load('templates/aboutCN.html');
 
-			$('#contactEN').load('templates/contactEN.html', null, function() {
-				$('<div>').appendTo('#contact-page').load('templates/donation.html');
-			});	
-			$('#contactCN').load('templates/contactCN.html', null, function() {
-				$('<div>').appendTo('#contact-page').load('templates/donation.html');
-			});
-			callback();
-		});
+  			$('#contactEN').load('templates/contactEN.html', null, function() {
+  				$('<div>').appendTo('#contact-page').load('templates/donation.html');
+  			});	
+  			$('#contactCN').load('templates/contactCN.html', null, function() {
+  				$('<div>').appendTo('#contact-page').load('templates/donation.html');
+  			});
+  			callback();
+  		});
 	};
 
 	function loadVideoPages() {
