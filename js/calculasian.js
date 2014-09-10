@@ -1,8 +1,7 @@
 $(function() {
 
 	var lang = getLanguage(),
-			urls = [],
-			homeVideoIndex = 0;
+			urls = [];
 	loadPages(function() {
 		// Finish constructing video pages
 		$('#fsn').on('fsn-ready', function(e) {  // FSN is ready
@@ -11,7 +10,7 @@ $(function() {
 
 				// Skip if iframe is already present
 					if ($('#home-page .video').has('iframe').length == 0) {
-						$('#home-page .video').append($('<iframe>', {'src': urls[homeVideoIndex], 'frameborder': 0}));
+						$('#home-page .video').append($('<iframe>', {'src': urls[7], 'frameborder': 0}));
 					}
 			});
 
@@ -64,7 +63,6 @@ $(function() {
 			var video = VIDEOS[i],
 					name = video.name,
 					bgcolor = video.bgcolor,
-					isHomeVideo = video.isHomeVideo,
 					title,
 					desciption;
 			if (lang === 'cn') {
