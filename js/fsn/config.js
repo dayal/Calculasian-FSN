@@ -166,7 +166,7 @@ define(function() {
 			
 			// Enable/Disable the page scroll
 			// [true, false]
-		,	scrollPage: true
+		,	scrollPage: false
 			
 			// Speed of the page transition
 			// *number*
