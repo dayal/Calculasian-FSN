@@ -1,4 +1,4 @@
-/*
+
 Copyright (c) 2008, Yahoo! Inc. All rights reserved.
 Code licensed under the BSD License:
 http://developer.yahoo.net/yui/license.txt
@@ -426,7 +426,7 @@ legend{color:#000;}
 /*--------- fontello animation css ends ---------*/
 
 
-/*--------- Custom CSS starts ---------*/
+/* home page*/
 
 #home-page {
 	text-align: center;
@@ -446,6 +446,13 @@ legend{color:#000;}
 	letter-spacing: 3px;
 }
 
+#language {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 14px;
+}
+
 #media-icons {
 	vertical-align: middle;
 	float: right;
@@ -458,6 +465,8 @@ legend{color:#000;}
     font-size: 20px;
     display: inline;
 }
+
+/* video pages */
 
 .video {
 	position:relative;
@@ -477,11 +486,15 @@ legend{color:#000;}
 	width: 100%;
 	height: 100%;
 }
-#language {
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 14px;
+
+/* spacing */
+.margin-top-100 {
+	margin-top: 100px;
+}
+
+/* other */
+.white {
+	color: white;
 }
 .donation {
 	margin-top: 10px;
@@ -499,11 +512,5 @@ legend{color:#000;}
   left: 50%;
   transform: translate(-50%, -50%)
 }
-.keyboard {
-	position: absolute;
-	bottom: 42px;
-	right: 15px;
-	z-index: 1000;
-}
 
-/*--------- Custom CSS ends ---------*/
+/*--------- Custom CSS ends ---------

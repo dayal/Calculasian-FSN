@@ -60,14 +60,13 @@ $(function() {
     $videoDiv.append($('<div>', {'class': 'loading icon-spin6 animate-spin', 'id': 'loadingHome'}));
     $('#home-page').append($videoDiv);
 
-		// Construct video pages (without video iframes)
-
+		// load video pages
 		for (var i=0; i < data.videos.length; i++) {
 			var video = data.videos[i],
           id = video.videoId,
 					name = video.name,
 					bgcolor = video.bgcolor,
-          isMusicVideo = video.isMusicVideo,
+          type = video.type,
 					title,
 					desciption;
 			if (lang === 'cn') {
@@ -80,16 +79,23 @@ $(function() {
 				videoUrls[id] = video.en.url;
 			}
 
-      if (isMusicVideo) {
-  			// constuct DOM
-  			var $article = $('<article>', {'data-link': name, 'data-background': bgcolor, 'id': 'video-page' + id});
-  			var $videoDiv = $('<div>', {'class': 'video', 'id': 'video' + id});
-  			$article.append($('<h1>', {text: title}))
-  				.append($('<p>', {text: description}))
-  				.append($videoDiv);
-  			$videoDiv.append($('<img>', {'class': 'ratio', 'src': 'http://placehold.it/16x9'}));
-        $videoDiv.append($('<div>', {'class': 'loading icon-spin6 animate-spin', 'id': 'loading' + id}));
+			// constuct DOM
+			var $article = $('<article>', {'data-link': name, 'data-background': bgcolor, 'id': 'video-page' + id});
+			var $videoDiv = $('<div>', {'class': 'video', 'id': 'video' + id});
+			$article.append($('<h1>', {text: title}))
+				.append($('<p>', {text: description}))
+				.append($videoDiv);
+			$videoDiv.append($('<img>', {'class': 'ratio', 'src': 'http://placehold.it/16x9'}));
+      $videoDiv.append($('<div>', {'class': 'loading icon-spin6 animate-spin', 'id': 'loading' + id}));
+
+      if (type === 'music') {
   			$('#videos').append($article);
+      } else if (type === 'about') {
+        if (lang === 'cn') {
+          $('#aboutCN').append($article);
+        } else {
+          $('#aboutEN').append($article);
+        }
       }
 		}	
 	};
@@ -103,11 +109,10 @@ var data =
   "homeVideoId": 7,
   "videos": [
     {
-      "isMusicVideo": true,
+      "type": "music",
       "videoId": 1,
       "name": "evolution-of-chinese-music",
       "bgcolor": "#b08e63",
-      "isHomeVideo": false,
       "cn": {
         "title": "华语流行乐进化史 Evolution of Chinese Music",
         "description": "华语乐坛1960-2010年金曲组曲",
@@ -120,11 +125,10 @@ var data =
       }
     },
     {
-      "isMusicVideo": true,
+      "type": "music",
       "videoId": 2,
       "name": "the-era-of-jay-part-1",
       "bgcolor": "#1b75a3",
-      "isHomeVideo": false,
       "cn": {
         "title": "依然周杰伦(上集) The Era of Jay (Part I)",
         "description": "希望大家喜欢这首歌，祝大家新年快乐，也祝周杰伦生日快乐。",
@@ -137,11 +141,10 @@ var data =
       }
     },
     {
-      "isMusicVideo": true,
+      "type": "music",
       "videoId": 3,
       "name": "where-did-time-fly",
       "bgcolor": "#db6816",
-      "isHomeVideo": false,
       "cn": {
         "title": "时间都去哪儿了 Where Did Time Fly",
         "description": "",
@@ -154,11 +157,10 @@ var data =
       }
     },
     {
-      "isMusicVideo": true,
+      "type": "music",
       "videoId": 4,
       "name": "frozen",
       "bgcolor": "#a6b4ab",
-      "isHomeVideo": false,
       "cn": {
         "title": "冰雪奇缘 Frozen",
         "description": "",
@@ -171,11 +173,10 @@ var data =
       }
     },
     {
-      "isMusicVideo": true,
+      "type": "music",
       "videoId": 5,
       "name": "brightest-star-in-the-night-sky",
       "bgcolor": "#34353f",
-      "isHomeVideo": false,
       "cn": {
         "title": "夜空中最亮的星 Brightest Star in the Night Sky",
         "description": "",
@@ -188,11 +189,10 @@ var data =
       }
     },
     {
-      "isMusicVideo": true,
+      "type": "music",
       "videoId": 6,
       "name": "love-never-felt-so-good",
       "bgcolor": "#7f33cc",
-      "isHomeVideo": false,
       "cn": {
         "title": "Love Never Felt So Good",
         "description": "",
@@ -205,11 +205,10 @@ var data =
       }
     },
     {
-      "isMusicVideo": true,
+      "type": "music",
       "videoId": 7,
       "name": "white-moonlight",
       "bgcolor": "#dddba2",
-      "isHomeVideo": true,
       "cn": {
         "title": "白月光 White Moonlight",
         "description": "",
@@ -219,6 +218,38 @@ var data =
         "title": "White Moonlight",
         "description": "",
         "url": "https://youtube.com/embed/czXUyd10soY?autoplay=0&controls=1&showinfo=0&autohide=1"
+      }
+    },
+    {
+      "type": "about",
+      "videoId": 8,
+      "name": "introduction-1",
+      "bgcolor": "#8fbf99",
+      "cn": {
+        "title": "自我介绍&网友问答（中文部分）",
+        "description": "",
+        "url": "http://player.youku.com/embed/XNzIwMjIwNDA0"
+      },
+      "en": {
+        "title": "Introduction (English)",
+        "description": "",
+        "url": "https://youtube.com/embed/lQBYpQG_8B4?autoplay=0&controls=1&showinfo=0&autohide=1"
+      }
+    },
+    {
+      "type": "about",
+      "videoId": 9,
+      "name": "introduction-2",
+      "bgcolor": "#8fbf99",
+      "cn": {
+        "title": "自我介绍&网友问答（英文部分）",
+        "description": "",
+        "url": "http://player.youku.com/embed/XNzE5ODUzNzQ4"
+      },
+      "en": {
+        "title": "Introduction (Chinese)",
+        "description": "",
+        "url": "https://youtube.com/embed/PsMt7krL9H0?autoplay=0&controls=1&showinfo=0&autohide=1"
       }
     }
   ]
