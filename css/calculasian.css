@@ -236,15 +236,6 @@ legend{color:#000;}
 		float: right;
 		width: 640px;
 	}
-	.content-left.600-400 {
-		float: left;
-		width: 600px;
-	}
-	.content-right.600-400 {
-		float: right;
-		width: 400px;
-	}
-	
 	.content-left .image {
 		margin-top: 70px;
 	}
